@@ -6,22 +6,20 @@ function Product({ product }) {
   return (
     <div
       key={id}
-      className="sm:w-1/2 h-1/4 flex flex-column justify-center content-center"
+      className="sm:w-1/2 h-1/4 flex justify-center content-center m-5 p-2 bg-white rounded text-gray-800"
     >
-      <Image
-        src={image}
-        alt={title}
-        width={"0"}
-        height={"0"}
-        style={{ width: "100%", height: "20%" }}
-      />
-      {title}
-      {description}
-      {category}
-      <div>
-        {price}
-        {rating.rate}
-        {rating.count}
+      <Image src={image} alt={title} width={"100"} height={"100"} />
+      <div className="flex flex-col p-3">
+        <h3 className="text-2xl">{title}</h3>
+        <div>
+          {description}
+          {category}
+        </div>
+        <div>
+          {price}
+          {rating.rate}
+          {rating.count}
+        </div>
       </div>
     </div>
   );
