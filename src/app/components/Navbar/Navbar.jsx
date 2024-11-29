@@ -1,6 +1,6 @@
 function Navbar() {
   return (
-    <div className="w-screen h-16 bg-slate-800 flex flex-row justify-between content-center text-center">
+    <div className="w-screen h-16 bg-gray-200 flex flex-row justify-between content-center text-center shadow-sm">
       <p className="p-5">Fake Store</p>
     </div>
   );

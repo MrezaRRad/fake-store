@@ -1,20 +1,14 @@
 import Navbar from "./components/Navbar/Navbar";
 import { getProducts } from "./lib/products";
-import Product from "./components/Product/Product";
-
+import ProductList from "./components/ProductList/ProductList";
 export default async function Home() {
   const products = await getProducts();
 
   return (
-    <div className="">
+    <div className="overflow-x-hidden">
       <nav>
         <Navbar />
-        {/* <ul>
-          {products.map((product) => (
-            <li key={product.id}>{product.title}</li>
-          ))}
-        </ul> */}
-        <Product product={products[0]} />
+        <ProductList products={products} />
       </nav>
     </div>
   );
