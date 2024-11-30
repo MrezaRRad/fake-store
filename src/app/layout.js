@@ -2,13 +2,25 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
+  src: "../fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
 const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
+  src: "../fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
+  weight: "100 900",
+});
+
+const robotoSlabLight = localFont({
+  src: "../fonts/RobotoSlab-Light.ttf",
+  variable: "--font-robotoslab-light",
+  weight: "100 900",
+});
+
+const robotoSlabRegular = localFont({
+  src: "../fonts/RobotoSlab-Regular.ttf",
+  variable: "--font-robotoslab-regular",
   weight: "100 900",
 });
 
@@ -21,7 +33,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${robotoSlabLight.variable} ${robotoSlabRegular.variable} antialiased`}
       >
         {children}
       </body>

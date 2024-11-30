@@ -3,7 +3,7 @@ import Product from "../Product/Product";
 
 function ProductList({ products }) {
   //defence from null or undefined input
-  if (!products) {
+  if (!products || !products.length || products.length === 0) {
     return;
   }
 
