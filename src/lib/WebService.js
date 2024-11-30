@@ -41,3 +41,11 @@ export function getProduct(productId) {
 
   return product;
 }
+
+export function getCategories() {
+  const productUrl = baseUrl + "categories";
+
+  const categories = _fetchData(productUrl);
+
+  return categories;
+}

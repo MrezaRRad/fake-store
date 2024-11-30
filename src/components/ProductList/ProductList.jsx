@@ -8,7 +8,7 @@ function ProductList({ products }) {
   }
 
   return (
-    <div className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-y-5">
+    <div className="mt-10 grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-y-5">
       {products.map((product) => (
         <Link
           key={product.id}
