@@ -1,11 +1,14 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 function Input(props) {
   const { type, min, max, onFilterProduct } = props;
 
   const [number, setNumber] = useState(1000);
+
+  const t = useTranslations("Filter");
 
   function handleRangeChange(event) {
     if (!event.target.value) {
@@ -21,7 +24,7 @@ function Input(props) {
 
   return (
     <div className="px-5 flex items-center justify-center gap-3">
-      <label>Max Price</label>
+      <label>{t("MaxPrice")}</label>
       <input
         type={type}
         value={number}

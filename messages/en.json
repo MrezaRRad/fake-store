@@ -1,0 +1,11 @@
+{
+  "NavBar": {
+    "LogoType": "Fake Store",
+    "Home": "Home"
+  },
+  "Filter": {
+    "Category": "Select Category",
+    "AllProducts": "All Products",
+    "MaxPrice": "Max Price"
+  }
+}

@@ -1,7 +1,11 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 function Combo(props) {
   const { options, onFilterProduct, selectedCategory } = props;
+
+  const t = useTranslations("Filter");
 
   function handleChangeOption(event) {
     onFilterProduct(event.target.value, "category");
@@ -11,13 +15,13 @@ function Combo(props) {
 
   return (
     <div>
-      <label className="px-5">Select Category</label>
+      <label className="px-5">{t("Category")}</label>
       <select
         className="p-2 focus:ring-0"
         onChange={(event) => handleChangeOption(event)}
         value={selectedCategory}
       >
-        <option value={"All"}>All Products</option>
+        <option value={"All"}>{t("AllProducts")}</option>
         {options.map((option) => (
           <option key={Math.random()}>{option}</option>
         ))}

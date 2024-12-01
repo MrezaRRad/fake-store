@@ -1,0 +1,11 @@
+{
+  "NavBar": {
+    "LogoType": "فروشگاه",
+    "Home": "خانه"
+  },
+  "Filter": {
+    "Category": "انتخاب دسته بندی",
+    "AllProducts": "همه دسته بندی ها",
+    "MaxPrice": "حداکثر قیمت"
+  }
+}

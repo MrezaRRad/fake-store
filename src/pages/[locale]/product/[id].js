@@ -1,10 +1,11 @@
-import "@/app/globals.css";
+import "@/app/[locale]/globals.css";
+import { NextIntlClientProvider, useLocale, useMessages } from "next-intl";
 
 import Navbar from "@/components/Navbar/Navbar";
 
 import { useRouter } from "next/router";
 import { getProduct } from "@/lib/WebService";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 function ProductPage() {
@@ -32,7 +33,6 @@ function ProductPage() {
 
   return (
     <div>
-      <Navbar />
       <div className="h-full w-full flex flex-col justify-center items-center md:flex-row">
         <div className=" m-10 xl:w-1/4">
           <Image
