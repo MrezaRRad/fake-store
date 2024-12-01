@@ -1,18 +1,17 @@
+"use client";
+
 import "@/app/[locale]/globals.css";
-import { NextIntlClientProvider, useLocale, useMessages } from "next-intl";
 
-import Navbar from "@/components/Navbar/Navbar";
-
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { getProduct } from "@/lib/WebService";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
-function ProductPage() {
+function ProductPage({ params }) {
   //getting productId from query string by useRouter hook
   const router = useRouter();
 
-  const { id } = router.query;
+  const { slug: id } = params;
   const [product, setProduct] = useState();
 
   useEffect(() => {
