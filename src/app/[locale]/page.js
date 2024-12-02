@@ -7,11 +7,13 @@ import ProductList from "../../components/ProductList/ProductList";
 
 import { getCategories, getProducts } from "../../lib/WebService";
 import Filter from "@/components/Filter/Filter";
+import Loading from "@/components/Loading/Loading";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState("All");
   const [price, setPrice] = useState(1000);
+  const [isLoading, setIsLoading] = useState(true);
 
   //use useRef for keep allProducts unmutable during page lifecycles
   const allProducts = useRef();
@@ -46,6 +48,8 @@ export default function Home() {
         setCategories(categoriesResponse);
       } catch (error) {
         console.log(error);
+      } finally {
+        setIsLoading(false);
       }
     }
 
@@ -84,6 +88,8 @@ export default function Home() {
 
     setProducts(filteredProducts);
   }
+
+  if (!products || isLoading) return <Loading />;
 
   return (
     <div>

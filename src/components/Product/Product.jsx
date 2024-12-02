@@ -5,7 +5,7 @@ function Product({ product }) {
   const { id, title, price, description, category, image, rating } = product;
 
   //make description shorter for better user experience
-  const shortDesc = description.split(" ", 12);
+  const shortDesc = description.split(" ", 8);
   const shortTitle = title.split(" ", 6);
 
   //conditional styles for categories
@@ -32,31 +32,31 @@ function Product({ product }) {
   return (
     <div
       key={id}
-      className="w-fit flex justify-center m-5 p-2 bg-white rounded-xl text-gray-800 shadow-l border-l-4 border-b-4 border-gray-100 h-full"
+      className="min-h-full min-w-full flex justify-center m-5 p-2 bg-white rounded-xl text-gray-800 shadow-l border-l-4 border-b-4 border-gray-100 "
     >
       <Image
         src={image}
         alt={title}
-        width={"100"}
-        height={"100"}
-        style={{ maxWidth: "120px", maxheight: "100px" }}
+        width={150}
+        height={50}
+        style={{ maxWidth: "150px", minHeight: "80px" }}
       />
-      <div className="flex flex-col content-between justify-between p-3">
+      <div className="flex flex-col content-between justify-between p-6">
         <div>
-          <h3 className="text-l">{shortTitle.join(" ")}</h3>
-          <div className="flex flex-col text-sm mt-2">
+          <h3 className="text-l font-bold text-lg">{shortTitle.join(" ")}</h3>
+          <div className="flex flex-col text-lg mt-2">
             <div>{shortDesc.join(" ")} ...</div>
           </div>
         </div>
         <div>
-          <div className="mt-2 -mx-1 w-min truncate">
+          <div className="mt-2 -mx-1 w-min truncate ">
             <p
-              className={`rounded-full  text-sm px-2 ${categoryBg} opacity-70`}
+              className={`rounded-full font-bold text-sm px-2 ${categoryBg} opacity-70`}
             >
               {category}
             </p>
           </div>
-          <div className="mt-3 -mb-2 flex justify-between ">
+          <div className="mt-3 -mb-2 flex justify-between text-lg font-semibold">
             <div>${price}</div>({rating.count}) {rating.rate}⭐
           </div>
         </div>

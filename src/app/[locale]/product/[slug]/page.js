@@ -6,13 +6,16 @@ import { useRouter } from "next/navigation";
 import { getProduct } from "@/lib/WebService";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Loading from "@/components/Loading/Loading";
 
 function ProductPage({ params }) {
-  //getting productId from query string by useRouter hook
+  //use useRouter hook for redirecting user to the homepage
   const router = useRouter();
 
+  //getting productId from query string
   const { slug: id } = params;
   const [product, setProduct] = useState();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const getProductInfo = async () => {
@@ -22,6 +25,7 @@ function ProductPage({ params }) {
         if (!response) throw new Error("There is a problem");
 
         setProduct(response);
+        setIsLoading(false);
       } else return;
     };
 
@@ -31,8 +35,6 @@ function ProductPage({ params }) {
   function handleReturnHome() {
     const currentPath = window.location.pathname;
 
-    console.log(currentPath);
-
     if (currentPath.startsWith("/en")) {
       router.replace("/en");
     }
@@ -41,12 +43,12 @@ function ProductPage({ params }) {
     }
   }
 
-  if (!product) return <p>Wait please...</p>;
+  if (!product || isLoading) return <Loading />;
 
   return (
     <div>
-      <div className="h-full w-full flex flex-col justify-center items-center md:flex-row">
-        <div className=" m-10 xl:w-1/4">
+      <div className="h-full w-full flex flex-col justify-center items-center mt-10 md:flex-row">
+        <div className="flex justify-center items-center m-10 xl:w-1/4">
           <Image
             src={product.image}
             width={250}
@@ -54,18 +56,18 @@ function ProductPage({ params }) {
             alt={product.title}
           />
         </div>
-        <div className="mx-5 xl:h-3/4 ">
-          <h2 className="font-bold">{product.title}</h2>
-          <p className="mt-3">{product.description}</p>
-          <p className="mt-2">Price: $ {product.price}</p>
-          <p className="mt-0">
+        <div className="mx-5 xl:h-3/4 text-2xl">
+          <h2 className="font-bold text-3xl">{product.title}</h2>
+          <p className="mt-3 font-normal ">{product.description}</p>
+          <p className="mt-2 font-bold">Price: $ {product.price}</p>
+          <p className="mt-0 font-bold">
             Rate: {product.rating.rate} Count: {product.rating.count}
           </p>
         </div>
       </div>
       <div className="flex w-full justify-end">
         <button
-          className="p-4 mr-10 bg-slate-400 rounded-lg text-slate-50"
+          className="p-4 mr-10 bg-slate-400 rounded-lg text-slate-50 text-xl font-semibold"
           onClick={handleReturnHome}
         >
           Back

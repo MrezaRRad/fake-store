@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { toPersianDigits } from "@/Util/Util";
 
 function Input(props) {
   const { type, min, max, onFilterProduct } = props;

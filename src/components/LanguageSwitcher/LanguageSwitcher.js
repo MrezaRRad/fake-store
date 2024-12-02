@@ -11,8 +11,6 @@ const LanguageSwitcher = () => {
   const [isPending, startTransition] = useTransition();
 
   const changeLanguage = (event) => {
-    const nextLng = event.target.value;
-
     const location = window.location.pathname;
 
     let newLocation;
@@ -35,7 +33,7 @@ const LanguageSwitcher = () => {
 
   return (
     <select
-      className="p-3 border-none bg-none"
+      className="p-3 border-none bg-none font-semibold text-base"
       onChange={(event) => changeLanguage(event)}
       value={activeLng}
     >

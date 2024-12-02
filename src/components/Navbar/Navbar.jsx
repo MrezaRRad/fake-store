@@ -8,12 +8,13 @@ function Navbar() {
   const t = useTranslations("NavBar");
 
   return (
-    <div className="w-full h-20 bg-gray-200 flex flex-row items-center justify-between px-10 shadow-md md:px-24">
+    <nav className="w-full h-28 bg-gray-200 flex flex-row items-center justify-between px-10 shadow-md md:px-24">
       <Link href="/">
-        <p>{t("Home")}</p>
+        <p className="font-bold text-xl">{t("Home")}</p>
       </Link>
+      <h1 id="logo">Fake Store</h1>
       <LanguageSwitcher />
-    </div>
+    </nav>
   );
 }
 

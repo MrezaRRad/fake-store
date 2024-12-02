@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: rajdhaniLight;
+  src: url("../../fonts/Rajdhani-Light.ttf");
+}
+
+@font-face {
+  font-family: iranMarker;
+  src: url("../../fonts/IRANMarker.ttf");
+}
+
+@font-face {
+  font-family: iranSans;
+  src: url("../../fonts/IRANSansWeb\(NoEn\)_UltraLight.woff2");
+}
+
+@font-face {
+  font-family: dafoe;
+  src: url("../../fonts/MrDafoe-Regular.ttf");
+}
+
 :root {
   --background: #ffffff;
   --foreground: #f9fafb;
@@ -17,5 +37,12 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: rajdhaniLight, iranSans;
+}
+
+#logo {
+  font-family: dafoe;
+  font-size: 2.5rem;
+  font-weight: bolder;
+  opacity: 0.2;
 }

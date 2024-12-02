@@ -11,8 +11,8 @@ function ProductList({ products }) {
   }
 
   return (
-    <div className="w-11/12 flex justify-center items-center">
-      <div className="mt-10 grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-y-5">
+    <div className="w-10/12 flex justify-center items-center">
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
         {products.map((product) => (
           <Link
             key={product.id}
