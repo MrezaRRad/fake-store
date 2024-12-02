@@ -34,8 +34,6 @@ export default async function LocaleLayout({ children, params: { locale } }) {
   // side is the easiest way to get started
   const messages = await getMessages();
 
-  console.log(locale);
-
   return (
     <html lang={locale} dir={locale === "en" ? "ltr" : "rtl"}>
       <body
@@ -44,7 +42,6 @@ export default async function LocaleLayout({ children, params: { locale } }) {
         <main>
           <NextIntlClientProvider messages={messages}>
             <Navbar />
-
             {children}
           </NextIntlClientProvider>
         </main>

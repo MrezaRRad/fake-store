@@ -34,7 +34,13 @@ function Product({ product }) {
       key={id}
       className="w-fit sm: flex justify-center content-center m-5 p-2 bg-white rounded-2xl text-gray-800 shadow-l border-l-4 border-blue-300 xl: h-full"
     >
-      <Image src={image} alt={title} width={"100"} height={"100"} />
+      <Image
+        src={image}
+        alt={title}
+        width={"100"}
+        height={"100"}
+        style={{ maxWidth: "120px", maxheight: "100px" }}
+      />
       <div className="flex flex-col content-between justify-between p-3">
         <div>
           <h3 className="text-l">{shortTitle.join(" ")}</h3>

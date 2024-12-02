@@ -28,6 +28,19 @@ function ProductPage({ params }) {
     getProductInfo();
   }, [id, setProduct]);
 
+  function handleReturnHome() {
+    const currentPath = window.location.pathname;
+
+    console.log(currentPath);
+
+    if (currentPath.startsWith("/en")) {
+      router.replace("/en");
+    }
+    if (currentPath.startsWith("/fa")) {
+      router.replace("/fa");
+    }
+  }
+
   if (!product) return <p>Wait please...</p>;
 
   return (
@@ -53,7 +66,7 @@ function ProductPage({ params }) {
       <div className="flex w-full justify-end">
         <button
           className="p-4 mr-10 bg-slate-400 rounded-lg text-slate-50"
-          onClick={() => router.replace("/")}
+          onClick={handleReturnHome}
         >
           Back
         </button>

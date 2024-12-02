@@ -25,8 +25,6 @@ export default async function RootLayout({ children, params: { locale } }) {
   // side is the easiest way to get started
   const messages = await getMessages();
 
-  console.log(locale);
-
   return (
     <NextIntlClientProvider messages={messages}>
       {children}
