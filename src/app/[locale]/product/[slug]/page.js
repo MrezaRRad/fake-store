@@ -7,11 +7,6 @@ import { getProduct } from "@/lib/WebService";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Loading from "@/components/Loading/Loading";
-import {
-  NUMBER_FORMAT_FARSI,
-  NUMBER_FORMAT_LATIN,
-  NumberInput,
-} from "react-hichestan-numberinput";
 
 function ProductPage({ params }) {
   //use useRouter hook for redirecting user to the homepage
