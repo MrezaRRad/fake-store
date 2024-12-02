@@ -90,8 +90,8 @@ export default function Home() {
       <main className="flex flex-col items-center justify-center">
         <Filter
           allCategories={allCategories.current}
-          category
-          handleFilterProducts
+          category={category}
+          handleFilterProducts={handleFilterProducts}
         />
         <ProductList products={products} />
       </main>

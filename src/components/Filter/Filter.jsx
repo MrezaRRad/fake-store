@@ -4,7 +4,7 @@ import Combo from "../Combo/Combo";
 function Filter(props) {
   const { allCategories, category, handleFilterProducts } = props;
   return (
-    <div className=" flex gap-5 min-h-24 w-full bg-gray-100 shadow-md justify-center items-center">
+    <div className="flex flex-col h-auto py-5 w-full bg-gray-100 shadow-md justify-center items-center gap-5 md:flex-row ">
       <Combo
         options={allCategories}
         onFilterProduct={handleFilterProducts}

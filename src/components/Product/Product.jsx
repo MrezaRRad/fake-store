@@ -13,26 +13,26 @@ function Product({ product }) {
 
   switch (category) {
     case "men's clothing":
-      categoryBg = "bg-sky-300";
+      categoryBg = "bg-sky-200";
       break;
     case "jewelery":
-      categoryBg = "bg-amber-300";
+      categoryBg = "bg-amber-200";
       break;
     case "electronics":
-      categoryBg = "bg-purple-300";
+      categoryBg = "bg-purple-200";
       break;
     case "women's clothing":
-      categoryBg = "bg-pink-300";
+      categoryBg = "bg-pink-200";
       break;
     default:
-      categoryBg = "bg-green-300";
+      categoryBg = "bg-green-200";
       break;
   }
 
   return (
     <div
       key={id}
-      className="w-fit sm: flex justify-center content-center m-5 p-2 bg-white rounded-2xl text-gray-800 shadow-l border-l-4 border-blue-300 xl: h-full"
+      className="w-fit flex justify-center m-5 p-2 bg-white rounded-xl text-gray-800 shadow-l border-l-4 border-b-4 border-gray-100 h-full"
     >
       <Image
         src={image}
@@ -50,7 +50,9 @@ function Product({ product }) {
         </div>
         <div>
           <div className="mt-2 -mx-1 w-min truncate">
-            <p className={`rounded-full  text-sm px-2 ${categoryBg}`}>
+            <p
+              className={`rounded-full  text-sm px-2 ${categoryBg} opacity-70`}
+            >
               {category}
             </p>
           </div>

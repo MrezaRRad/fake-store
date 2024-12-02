@@ -15,7 +15,7 @@ function Combo(props) {
 
   return (
     <div>
-      <label className="px-5">{t("Category")}</label>
+      <label className="px-2">{t("Category")}</label>
       <select
         className="p-2 focus:ring-0"
         onChange={(event) => handleChangeOption(event)}

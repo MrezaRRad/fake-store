@@ -23,7 +23,7 @@ function Input(props) {
   }
 
   return (
-    <div className="px-5 flex items-center justify-center gap-3">
+    <div className="flex items-center justify-center">
       <label>{t("MaxPrice")}</label>
       <input
         type={type}
