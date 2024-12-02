@@ -1,12 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
-import { toPersianDigits } from "@/Util/Util";
+import { useLocale, useTranslations } from "next-intl";
+import { toFarsiNumber } from "@/Util/Util";
 
 function Input(props) {
-  const { type, min, max, onFilterProduct } = props;
+  const locale = useLocale();
 
+  const { type, min, max, onFilterProduct } = props;
   const [number, setNumber] = useState(1000);
 
   const t = useTranslations("Filter");
@@ -35,7 +36,9 @@ function Input(props) {
         className="scale-150 relative inset-0 mx-10"
         step={1}
       />
-      <output className="pl-1">${number}</output>
+      <output className="pl-1">
+        ${locale === "en" ? number : toFarsiNumber(number)}
+      </output>
     </div>
   );
 }

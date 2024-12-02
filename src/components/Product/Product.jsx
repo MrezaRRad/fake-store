@@ -1,6 +1,11 @@
 import Image from "next/image";
+import { toFarsiNumber } from "@/Util/Util";
+import { useLocale, useTranslations } from "next-intl";
 
 function Product({ product }) {
+  const locale = useLocale();
+  const t = useTranslations("Filter");
+
   //destructure props and products for sake of simplicity
   const { id, title, price, description, category, image, rating } = product;
 
@@ -53,11 +58,15 @@ function Product({ product }) {
             <p
               className={`rounded-full font-bold text-sm px-2 ${categoryBg} opacity-70`}
             >
-              {category}
+              {t(category)}
             </p>
           </div>
           <div className="mt-3 -mb-2 flex justify-between text-lg font-semibold">
-            <div>${price}</div>({rating.count}) {rating.rate}⭐
+            <div>
+              {locale === "en" ? "$ " + price : toFarsiNumber(price) + " دلار"}
+            </div>
+            ({locale === "en" ? rating.count : toFarsiNumber(rating.count)}){" "}
+            {locale === "en" ? rating.rate : toFarsiNumber(rating.rate)}⭐
           </div>
         </div>
       </div>

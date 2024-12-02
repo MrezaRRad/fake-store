@@ -7,8 +7,15 @@ import { getProduct } from "@/lib/WebService";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Loading from "@/components/Loading/Loading";
+import { useTranslations } from "next-intl";
+import { useLocale } from "use-intl";
+import { toFarsiNumber } from "@/Util/Util";
 
 function ProductPage({ params }) {
+  const t = useTranslations("Product");
+
+  const locale = useLocale();
+
   //use useRouter hook for redirecting user to the homepage
   const router = useRouter();
 
@@ -59,9 +66,21 @@ function ProductPage({ params }) {
         <div className="mx-5 xl:h-3/4 text-2xl">
           <h2 className="font-bold text-3xl">{product.title}</h2>
           <p className="mt-3 font-normal ">{product.description}</p>
-          <p className="mt-2 font-bold">Price: $ {product.price}</p>
+          <p className="mt-2 font-bold">
+            {t("Price")}:{" "}
+            {locale === "en"
+              ? "$ " + product.price
+              : toFarsiNumber(product.price) + " دلار"}
+          </p>
           <p className="mt-0 font-bold">
-            Rate: {product.rating.rate} Count: {product.rating.count}
+            {t("Rate")}:{" "}
+            {locale === "en"
+              ? product.rating.rate
+              : toFarsiNumber(product.rating.rate)}{" "}
+            {t("Count")}:{" "}
+            {locale === "en"
+              ? product.rating.count
+              : toFarsiNumber(product.rating.count)}
           </p>
         </div>
       </div>
@@ -70,7 +89,7 @@ function ProductPage({ params }) {
           className="p-4 mr-10 bg-slate-400 rounded-lg text-slate-50 text-xl font-semibold"
           onClick={handleReturnHome}
         >
-          Back
+          {t("Back")}
         </button>
       </div>
     </div>

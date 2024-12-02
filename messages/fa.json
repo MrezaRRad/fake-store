@@ -5,7 +5,17 @@
   },
   "Filter": {
     "Category": "انتخاب دسته بندی",
+    "MaxPrice": "حداکثر قیمت",
     "AllProducts": "همه دسته بندی ها",
-    "MaxPrice": "حداکثر قیمت"
+    "electronics": "الکترونیکی",
+    "jewelery": "جواهرات",
+    "men's clothing": "پوشاک مردانه",
+    "women's clothing": "پوشاک زنانه"
+  },
+  "Product": {
+    "Price": "قیمت",
+    "Rate": "امتیاز",
+    "Count": "تعداد نظر",
+    "Back": "بازگشت"
   }
 }

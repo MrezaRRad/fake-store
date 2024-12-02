@@ -2,12 +2,12 @@
 
 import { Suspense, useEffect, useRef, useState } from "react";
 
-import Navbar from "../../components/Navbar/Navbar";
-import ProductList from "../../components/ProductList/ProductList";
-
 import { getCategories, getProducts } from "../../lib/WebService";
+
+import ProductList from "../../components/ProductList/ProductList";
 import Filter from "@/components/Filter/Filter";
 import Loading from "@/components/Loading/Loading";
+import { useLocale } from "next-intl";
 
 export default function Home() {
   const [products, setProducts] = useState([]);

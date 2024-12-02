@@ -5,7 +5,17 @@
   },
   "Filter": {
     "Category": "Select Category",
+    "MaxPrice": "Max Price",
     "AllProducts": "All Products",
-    "MaxPrice": "Max Price"
+    "electronics": "electronics",
+    "jewelery": "jewelery",
+    "men's clothing": "men's clothing",
+    "women's clothing": "women's clothing"
+  },
+  "Product": {
+    "Price": "Price",
+    "Rate": "Rate",
+    "Count": "Count",
+    "Back": "Back"
   }
 }

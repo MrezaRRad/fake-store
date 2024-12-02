@@ -23,7 +23,9 @@ function Combo(props) {
       >
         <option value={"All"}>{t("AllProducts")}</option>
         {options.map((option) => (
-          <option key={Math.random()}>{option}</option>
+          <option key={Math.random()} value={option}>
+            {t(option)}
+          </option>
         ))}
       </select>
     </div>
