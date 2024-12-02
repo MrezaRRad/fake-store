@@ -7,6 +7,11 @@ import { getProduct } from "@/lib/WebService";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Loading from "@/components/Loading/Loading";
+import {
+  NUMBER_FORMAT_FARSI,
+  NUMBER_FORMAT_LATIN,
+  NumberInput,
+} from "react-hichestan-numberinput";
 
 function ProductPage({ params }) {
   //use useRouter hook for redirecting user to the homepage
@@ -46,8 +51,8 @@ function ProductPage({ params }) {
   if (!product || isLoading) return <Loading />;
 
   return (
-    <div>
-      <div className="h-full w-full flex flex-col justify-center items-center mt-10 md:flex-row">
+    <div className="w-full flex justify-center items-center flex-col">
+      <div className="w-10/12 flex flex-col justify-center items-center mt-10 md:flex-row">
         <div className="flex justify-center items-center m-10 xl:w-1/4">
           <Image
             src={product.image}
@@ -65,7 +70,7 @@ function ProductPage({ params }) {
           </p>
         </div>
       </div>
-      <div className="flex w-full justify-end">
+      <div className="flex w-10/12 justify-end">
         <button
           className="p-4 mr-10 bg-slate-400 rounded-lg text-slate-50 text-xl font-semibold"
           onClick={handleReturnHome}

@@ -5,7 +5,7 @@ function Product({ product }) {
   const { id, title, price, description, category, image, rating } = product;
 
   //make description shorter for better user experience
-  const shortDesc = description.split(" ", 8);
+  const shortDesc = description.split(" ", 12);
   const shortTitle = title.split(" ", 6);
 
   //conditional styles for categories
@@ -32,7 +32,7 @@ function Product({ product }) {
   return (
     <div
       key={id}
-      className="min-h-full min-w-full flex justify-center m-5 p-2 bg-white rounded-xl text-gray-800 shadow-l border-l-4 border-b-4 border-gray-100 "
+      className="min-h-full min-w-full flex justify-center p-2 bg-white rounded-xl text-gray-800 shadow-l border-l-4 border-b-4 border-gray-100 "
     >
       <Image
         src={image}
