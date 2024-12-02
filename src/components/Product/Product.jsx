@@ -46,7 +46,7 @@ function Product({ product }) {
         height={50}
         style={{ maxWidth: "150px", minHeight: "80px" }}
       />
-      <div className="flex flex-col content-between justify-between p-6">
+      <div className="flex flex-col content-between justify-between p-3">
         <div>
           <h3 className="text-l font-bold text-lg">{shortTitle.join(" ")}</h3>
           <div className="flex flex-col text-lg mt-2">

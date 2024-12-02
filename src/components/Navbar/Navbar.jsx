@@ -8,7 +8,7 @@ function Navbar() {
   const t = useTranslations("NavBar");
 
   return (
-    <nav className="w-full h-28 bg-gray-200 flex flex-row items-center justify-center shadow-md">
+    <nav className="w-full h-24 bg-gray-200 flex flex-row items-center justify-center shadow-md sticky z-50">
       <div className="flex justify-between items-center w-10/12 px-3">
         <Link href="/">
           <p className="font-bold text-xl">{t("Home")}</p>
