@@ -9,6 +9,9 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+این پروژه بر روی Vercel Deploy شده است
+https://fake-store-92zdl7oup-mrezarrads-projects.vercel.app/en
+
 این پروژه با استفاده از NextJs پیاده سازی شده است
 
 بر شروع به کار ابتدا اجزای صفحه اول برنامه آماده و در صفحه اصلی قرار گرفت
