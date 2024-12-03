@@ -1,6 +1,6 @@
 const baseUrl = "https://fakestoreapi.com/products/";
 
-async function _fetchData(apiUrl) {
+async function fetchData(apiUrl) {
   let result;
 
   try {
@@ -29,7 +29,7 @@ async function _fetchData(apiUrl) {
 }
 
 export function getProducts() {
-  const products = _fetchData(baseUrl);
+  const products = fetchData(baseUrl);
 
   return products;
 }
@@ -37,7 +37,7 @@ export function getProducts() {
 export function getProduct(productId) {
   const productUrl = baseUrl + productId;
 
-  const product = _fetchData(productUrl);
+  const product = fetchData(productUrl);
 
   return product;
 }
@@ -45,7 +45,7 @@ export function getProduct(productId) {
 export function getCategories() {
   const productUrl = baseUrl + "categories";
 
-  const categories = _fetchData(productUrl);
+  const categories = fetchData(productUrl);
 
   return categories;
 }

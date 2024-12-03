@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
 First, run the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+این پروژه با استفاده از NextJs پیاده سازی شده است
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+بر شروع به کار ابتدا اجزای صفحه اول برنامه آماده و در صفحه اصلی قرار گرفت
 
-## Learn More
+این اجزا در پوشه components ایجاد شده اند
 
-To learn more about Next.js, take a look at the following resources:
+اولین component منوی راهبری یا Navbar بود
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+به منظور پیاده سازی واکنش گرا components ابتدا در صفحه موبایل آماده شده و سپس در صفحه بزرگتر اصلاح گردید
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+بعد از این مرحله نوبت به پیاده سازی ارتباط با وب سرویس رسید. برای این منظور یک پوشه با نامه lib ایجاد و فایل WebService داخل آن افزوده شد.
 
-## Deploy on Vercel
+توابع ایجاد شده در این فایل مسئولیت برقراری ارتباط با وب سرویس ها را دارند.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## WebService.js
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+تابع fetchData وظیفه برقراری ارتباط با وب سرویس را دارد
+
+به منظور دریافت اطلاعات مختلف برنامه از توابع مختلف با هدف خاص استفاده شده است.
+
+این توابع شامل موارد ذیل هستند:
+getProducts به منظور دریافت لیست تمامی کالاها
+getProduct به منظور دریافت یک کالا با آی دی مشخص
+getCategories به منظور دریافت لیست دسته های کالا
+
+Error handling با استفاده از try catch و درج خطا در console صورت گرفت
+
+## Homepage
+
+بعد از دریاف اطلاعات کالاها، پیاده سازی صفحه اصلی تکمیل شد
+
+به منظور بهینه سازی برای موتورهای جستجو از HTML Semantic Elemets استفاده شود
+
+همچنین برای تصاویر از alt attribute مقداردهی شد
+
+فیلدهای متا مقداردهی شد
+
+## Filter
+
+سپس امکان فیلتر بر اساس دسته بندی کالاها و قیمت و ترکیب این دو پیاده سازی شد.
+
+به منظور نگهداری دیتای تمامی کالا در rendering cycles از useRef استفاده شد
+
+## Productpage
+
+سپس صفحه مختص هر محصول بصورت واکنشگرا و mobileFirst طراحی و پیاده سازی شد.
+
+## Routing
+
+با استفاده از امکانات Nextjs به منظور مسیریابی بر اساس Filesystem پیاده سازی شد
+
+میتوانم بر اساس متدهای دیگر مسیریابی در برنامه مانند react router هم پیاده سازی کنم
+
+## Multi Language
+
+با استفاده از ویژگی i18 قابلیت دو زبانه به این برنامه اضافه گردید.
