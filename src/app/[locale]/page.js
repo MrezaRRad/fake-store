@@ -1,13 +1,12 @@
 "use client";
 
-import { Suspense, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { getCategories, getProducts } from "../../lib/WebService";
 
 import ProductList from "../../components/ProductList/ProductList";
 import Filter from "@/components/Filter/Filter";
 import Loading from "@/components/Loading/Loading";
-import { useLocale } from "next-intl";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -92,15 +91,13 @@ export default function Home() {
   if (!products || isLoading) return <Loading />;
 
   return (
-    <div>
-      <main className="flex flex-col items-center justify-center">
-        <Filter
-          allCategories={allCategories.current}
-          category={category}
-          handleFilterProducts={handleFilterProducts}
-        />
-        <ProductList products={products} />
-      </main>
-    </div>
+    <>
+      <Filter
+        allCategories={allCategories.current}
+        category={category}
+        handleFilterProducts={handleFilterProducts}
+      />
+      <ProductList products={products} />
+    </>
   );
 }

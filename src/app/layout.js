@@ -1,18 +1,14 @@
-import Navbar from "@/components/Navbar/Navbar";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { NextIntlClientProvider, useLocale } from "next-intl";
 import { getMessages } from "next-intl/server";
-import localFont from "next/font/local";
 
-const robotoSlabLight = localFont({
-  src: "../fonts/RobotoSlab-Light.ttf",
-  variable: "--font-robotoslab-light",
-  weight: "100 900",
-});
-
-const robotoSlabRegular = localFont({
-  src: "../fonts/RobotoSlab-Regular.ttf",
-  variable: "--font-robotoslab-regular",
-  weight: "100 900",
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 60 * 1000,
+    },
+  },
 });
 
 export const metadata = {
@@ -26,8 +22,12 @@ export default async function RootLayout({ children, params: { locale } }) {
   const messages = await getMessages();
 
   return (
-    <NextIntlClientProvider messages={messages}>
-      {children}
-    </NextIntlClientProvider>
+    <html lang={locale} dir={locale === "en" ? "ltr" : "rtl"}>
+      <body>
+        <NextIntlClientProvider messages={messages}>
+          {children}
+        </NextIntlClientProvider>
+      </body>
+    </html>
   );
 }

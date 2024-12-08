@@ -5,7 +5,6 @@ import { routing } from "@/i18n/routing";
 
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
-
 export const metadata = {
   title: "Fake Store | Provide nice and cheap products",
   description: "A store for buying nice and cheap products",
@@ -22,15 +21,9 @@ export default async function LocaleLayout({ children, params: { locale } }) {
   const messages = await getMessages();
 
   return (
-    <html lang={locale} dir={locale === "en" ? "ltr" : "rtl"}>
-      <body>
-        <main>
-          <NextIntlClientProvider messages={messages}>
-            <Navbar />
-            {children}
-          </NextIntlClientProvider>
-        </main>
-      </body>
-    </html>
+    <main className="flex flex-col items-center justify-center">
+      <Navbar />
+      {children}
+    </main>
   );
 }
